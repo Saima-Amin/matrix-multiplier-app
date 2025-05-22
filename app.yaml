@@ -1,0 +1,12 @@
+# runtime: python39
+# entrypoint: gunicorn -b :$PORT main:app
+
+# handlers:
+# - url: /.*
+#   script: auto
+services:
+  - type: web
+    name: your-app-name
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn main:app"
